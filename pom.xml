@@ -1,0 +1,58 @@
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>SoftwareFactory</groupId>
+	<artifactId>PHP</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<!--<scm>
+		<connection></connection>
+		<tag></tag>
+	</scm>-->
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<assembly.appendAssemblyId>false</assembly.appendAssemblyId>
+	</properties>
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>2.6</version>
+				<executions>
+					<execution>
+						<id>default-package</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<descriptors>
+						<descriptor>app/config/assembly.xml</descriptor>
+					</descriptors>
+				</configuration>
+			</plugin>
+			<!-- Used to cancel the default Jar file creation -->
+			<plugin>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>2.3.1</version>
+				<executions>
+					<execution>
+						<id>default-jar</id>
+						<phase>none</phase>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+	<!--<dependencies> -->
+	  <!--  phpUnit for PHP 5 -->
+	 <!--<dependency>
+	   <groupId>de.phpunit</groupId>
+	   <artifactId>PHPUnit</artifactId>
+	   <version>3.6.10</version>
+	   <type>phar</type>
+	  </dependency>
+ 	</dependencies>-->
+
+</project>
